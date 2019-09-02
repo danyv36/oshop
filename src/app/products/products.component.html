@@ -3,7 +3,7 @@
         <product-filter [category]="category"></product-filter>
     </div>
     <div class="col">
-        <div class="row">
+        <div class="row" *ngIf="cart$ | async as cart">
             <!-- to use <ng-container> as a grouping element when there is no suitable host element. -->
             <ng-container *ngFor="let p of filteredProducts; let i = index">
                 <div class="col">
