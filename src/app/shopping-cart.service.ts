@@ -22,7 +22,7 @@ export class ShoppingCartService {
     let cartId = await this.getOrCreateCartId();
     return (this.db.object('/shopping-carts/' + cartId).valueChanges() as Observable<ShoppingCart>)
       .pipe(
-        map(x => new ShoppingCart(x.items))
+        map((x: any) => { return new ShoppingCart(x.items)})
       );
   }
 
