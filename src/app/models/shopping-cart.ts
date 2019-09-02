@@ -15,6 +15,7 @@ export class ShoppingCart {
     }
 
     get totalPrice() {
+        if (this.items.length === 0) return 0;
         return this.items.map(i => i.totalPrice).reduce((a, b) => a + b);
     }
 
@@ -30,5 +31,5 @@ export class ShoppingCart {
     getQuantity(product: Product) {
         let item = this.itemsMap[product.key];
         return item ? item.quantity : 0;
-      }
+    }
 }
