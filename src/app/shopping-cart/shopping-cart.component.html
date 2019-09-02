@@ -14,9 +14,9 @@
         <tbody>
             <!-- we mapped the .items property in the constructor of the shopping cart for easy access-->
             <tr *ngFor="let item of cart.items">
-                <td>{{item.product.title}}</td>
-                <td>{{item.quantity}}</td>
-                <td>{{item.totalPrice | currency:'USD': true}}</td>
+                <td>{{item.title}}</td>
+                <td><product-quantity [product]="item" [shopping-cart]="cart"></product-quantity></td>
+                <td>{{item.price | currency:'USD': true}}</td>
             </tr>
         </tbody>
         <tfoot>
