@@ -12,6 +12,7 @@
             </tr>
         </thead>
         <tbody>
+            <!-- we mapped the .items property in the constructor of the shopping cart for easy access-->
             <tr *ngFor="let item of cart.items">
                 <td>{{item.product.title}}</td>
                 <td>{{item.quantity}}</td>

@@ -1,4 +1,5 @@
 import { ShoppingCartItem } from './shopping-cart-item';
+import { Product } from './product';
 
 export class ShoppingCart {
     items: ShoppingCartItem[] = [];
@@ -9,17 +10,10 @@ export class ShoppingCart {
         }
     }
 
-    // get productIds() {
-    //     return Object.keys(this.items);
-    // }
-
     get totalPrice() {
-        let sum = 0;
-        for (let productId in this.items) {
-            sum += this.items[productId].totalPrice;
-        }
-        return sum;
+        return this.items.map(i => i.totalPrice).reduce((a, b) => a + b);
     }
+
     get totalItemsCount() {
         let count = 0;
         for (let productId in this.itemsMap) {
@@ -28,4 +22,9 @@ export class ShoppingCart {
 
         return count;
     }
+
+    getQuantity(product: Product) {
+        let item = this.itemsMap[product.key];
+        return item ? item.quantity : 0;
+      }
 }
