@@ -27,7 +27,7 @@
     "angularfire2": "^5.2.1",
     "bootstrap": "^4.3.1",
     "firebase": "^6.4.0",
-    "firebase-tools": "^7.2.2",
+    "firebase-tools": "^11.30.0",
     "g": "^2.0.1",
     "ng2-validation": "^4.2.0",
     "rxjs": "6.4.0",
